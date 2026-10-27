@@ -1,0 +1,12 @@
+[package]
+name = "authentichuman-site"
+version = "0.1.0"
+edition = "2021"
+description = "Authentic Human static site generator (std-only Rust) for GitHub Pages"
+
+[[bin]]
+name = "authentichuman-site"
+path = "src/main.rs"
+
+[profile.release]
+opt-level = 3
