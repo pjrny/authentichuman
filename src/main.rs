@@ -276,6 +276,7 @@ struct Service {
     process: &'static [&'static str],
     pricing: &'static [&'static str],
     case: &'static str,
+    links: &'static [(&'static str, &'static str)],
     cta: &'static str,
 }
 
@@ -301,6 +302,7 @@ const SERVICES: &[Service] = &[
             "Compare: HeyGen at $29/mo and Synthesia at $19/mo are rentals — the platform owns the avatar. Here, you own it outright.",
         ],
         case: "WorldFest filmmakers: likeness protected and monetized through flix.worldfest.org, with provenance on every deliverable.",
+        links: &[],
         cta: "Join the LMA beta",
     },
     Service {
@@ -324,6 +326,7 @@ const SERVICES: &[Service] = &[
             "Runs on your hardware or a node we configure — see the Platform offer on the home page for the smaller watched-node version.",
         ],
         case: "DBE_V0 taxonomy observatory: an autonomous agent running research workflows on local models.",
+        links: &[("DBE_V0 — live", "https://pjrny.github.io/DBE_V0/")],
         cta: "Book an architecture call — Houston, TX",
     },
     Service {
@@ -346,6 +349,7 @@ const SERVICES: &[Service] = &[
             "Oversight: from $2k/mo (policy, audit, training, monitoring)",
         ],
         case: "Our own governance stack is public on the Governance page — C2PA policy, model card, ethics and disclosure TOS. We sell what we run.",
+        links: &[],
         cta: "Download the free framework template",
     },
     Service {
@@ -368,6 +372,7 @@ const SERVICES: &[Service] = &[
             "Grant co-write included in the engagement",
         ],
         case: "PoliSim-DBE-Game: a political and economic simulator running Monte Carlo policy tests. DBE_V0: the scientific taxonomy observatory behind it.",
+        links: &[("DBE_V0 — live", "https://pjrny.github.io/DBE_V0/"), ("Political Economic Simulator — live", "https://poli-eco-sim.kimi.page/")],
         cta: "Co-write an ECRP grant with us",
     },
     Service {
@@ -390,12 +395,13 @@ const SERVICES: &[Service] = &[
             "Includes press-release template and a 60-second explainer script",
         ],
         case: "WorldFest on flix.worldfest.org: independent human stories, streamed free, each one a package instead of a single post.",
+        links: &[("Make a Scene — free", "https://opal-flora-opal-forest.grok.me/")],
         cta: "Order a story",
     },
 ];
 
 // ---------------------------------------------------------------------------
-// Blogs — 7 niches, hero format (who / hook / problem / losers / approach /
+// Blogs — 6 niches, hero format (who / hook / problem / losers / approach /
 // example / winners / free tools / CTA), adapted from the user's handoff
 // ---------------------------------------------------------------------------
 
@@ -412,6 +418,7 @@ struct Blog {
     example: &'static str,
     winners: &'static str,
     tools: &'static [(&'static str, &'static str)],
+    links: &'static [(&'static str, &'static str)],
     cta: &'static str,
 }
 
@@ -436,6 +443,7 @@ const BLOGS: &[Blog] = &[
             ("Hardware", "Any modern Mac or a home GPU box — $0 extra to start"),
             ("Databases", "Our Indie Film Tools DB (updated weekly)"),
         ],
+        links: &[("Make a Scene — free scene builder", "https://opal-flora-opal-forest.grok.me/")],
         cta: "Want free hosting for your festival? Apply via flix.worldfest.org — or join the LMA beta to monetize filmmaker likeness.",
     },
     Blog {
@@ -458,6 +466,7 @@ const BLOGS: &[Blog] = &[
             ("Hardware", "Repurposed phones as door scanners — offline check-in that syncs later"),
             ("Databases", "Our Event Tools DB"),
         ],
+        links: &[("Free ticketing — pjrny.com/organizers", "https://pjrny.com/organizers")],
         cta: "Create a free event on pjrny.com/organizers, or apply as a partner.",
     },
     Blog {
@@ -473,13 +482,14 @@ const BLOGS: &[Blog] = &[
         example: "DBE_V0, our taxonomy observatory, models complex systems this way — the same approach behind the Scientific Simulator service.",
         winners: "Winners get funded, publish faster, and walk into the next call with results instead of intentions.",
         tools: &[
-            ("Websites", "DOE user facilities, authentichuman.co/services/scientific-simulator"),
+            ("Websites", "DBE_V0 — pjrny.github.io/DBE_V0, authentichuman.co/services/scientific-simulator, DOE user facilities"),
             ("Apps", "Simulation dashboards, Monte Carlo runners"),
             ("GitHub", "deepxde, fusion-data tooling"),
             ("AIs", "Local open models for code, lab notes and grant drafts"),
             ("Hardware", "DOE lab access, your own GPU node"),
             ("Databases", "Our Fusion Tools DB"),
         ],
+        links: &[("DBE_V0 — live demo", "https://pjrny.github.io/DBE_V0/")],
         cta: "Co-write a DOE ECRP grant with us — see the Scientific Simulator service.",
     },
     Blog {
@@ -495,58 +505,38 @@ const BLOGS: &[Blog] = &[
         example: "PoliSim tests central-bank rates against inflation and GDP with 10,000-run Monte Carlo simulations — 100 policy combinations tested before one is announced.",
         winners: "Winners announce the policy that already survived simulation, and spend their budget where the model says voters actually move.",
         tools: &[
-            ("Websites", "authentichuman.co (PoliSim project)"),
+            ("Websites", "Political Economic Simulator — poli-eco-sim.kimi.page, authentichuman.co (PoliSim project)"),
             ("Apps", "PoliSim game, policy simulator"),
             ("GitHub", "policysimulator"),
             ("AIs", "Local LLM voter personas — run locally, never uploaded"),
             ("Hardware", "A laptop is enough to start"),
             ("Databases", "Our Political Sim DB"),
         ],
+        links: &[("Political Economic Simulator — live", "https://poli-eco-sim.kimi.page/")],
         cta: "Request the PoliSim template.",
     },
     Blog {
-        slug: "musicians",
-        niche: "Musicians",
-        maker: "Authentic Human x Jukebox Legacy",
-        texture: "A person in a VR headset — the human in the loop",
-        hook: "You will want to hear this if a platform owns your voice.",
-        who: "Independent musicians and producers, roughly 1k–100k listeners, working since the first generation of AI music tools.",
-        problem: "From Jukebox in 2018 to today's AI music explosion, the tools got powerful and the rights got murky. Stems uploaded to random sites, voices cloned with no pay, masters lost to a terms-of-service checkbox.",
-        losers: "Musicians uploading stems anywhere, training other people's models for free, and signing away likeness and voice in the fine print.",
-        approach: "Local stem separation and a voice likeness you own — verified, protected, and monetized through the Likeness Agent instead of rented to a platform.",
-        example: "The founder's early Jukebox-era experiments (2018–2020) drew 1M+ views and proved the demand — Authentic Human exists because that era also proved the rights problem.",
-        winners: "Winners hold a verified voice that earns while they sleep, and can prove which recordings are really them.",
-        tools: &[
-            ("Websites", "authentichuman.co/services/likeness-agent"),
-            ("Apps", "Stable Audio, Demucs, Spleeter"),
-            ("GitHub", "jukebox, audiocraft, local RVC voice tooling"),
-            ("AIs", "Local voice models you own"),
-            ("Hardware", "Your studio machine — nothing needs to leave it"),
-            ("Databases", "Our Music AI Tools DB"),
-        ],
-        cta: "Register for the LMA beta and verify your voice.",
-    },
-    Blog {
         slug: "influencers-creators",
-        niche: "Influencers / Creators",
+        niche: "Influencers, Creators & Musicians",
         maker: "Authentic Human x OIMO MAS",
         texture: "Snow over sand dunes — clone vs real",
         hook: "You will want to hear this if you've seen an ad with 'you' in it that you never shot.",
-        who: "Creators with 10k+ followers who are at real risk of deepfakes and unauthorized clones.",
-        problem: "Avatar platforms made likeness rentable — but a rented face is a face the platform owns. Meanwhile your actual face is being scaled into ads without you.",
-        losers: "Creators renting their face for $29/mo while the platform keeps the avatar, and anyone who signed away likeness rights in a ToS they never read.",
-        approach: "OIMO MAS — the Likeness Agent: Identify where your likeness is used, Protect it with C2PA provenance and takedowns, Monetize it on a revenue share you control.",
-        example: "WorldFest filmmakers already run this protection: verified likeness, provenance on deliverables, licensing instead of leaks.",
-        winners: "Winners earn passive avatar income from a likeness they own and can revoke — and can prove the fakes are fakes.",
+        who: "Creators with 10k+ followers — and independent musicians and producers, roughly 1k–100k listeners — who are at real risk of deepfakes, unauthorized clones, and platforms owning their face or voice.",
+        problem: "Avatar platforms made likeness rentable — but a rented face is a face the platform owns. Meanwhile your actual face is being scaled into ads without you. Musicians got hit first: from Jukebox in 2018 to today's AI music explosion, stems uploaded to random sites train other people's models for free, and voices get cloned with no pay.",
+        losers: "Creators renting their face for $29/mo while the platform keeps the avatar, anyone who signed away likeness rights in a ToS they never read, and musicians uploading stems anywhere and signing away voice in the fine print.",
+        approach: "OIMO MAS — the Likeness Agent: Identify where your likeness is used, Protect it with C2PA provenance and takedowns, Monetize it on a revenue share you control. For musicians: local stem separation and a voice likeness you own, verified the same way.",
+        example: "WorldFest filmmakers already run this protection: verified likeness, provenance on deliverables, licensing instead of leaks. And the founder's Jukebox-era music experiments (2018–2020) drew 1M+ views — Authentic Human exists because that era also proved the rights problem.",
+        winners: "Winners earn passive avatar income from a likeness they own and can revoke — and can prove the fakes are fakes. Musicians hold a verified voice that earns while they sleep.",
         tools: &[
             ("Websites", "authentichuman.co/services/likeness-agent"),
-            ("Apps", "Face-verification tooling, takedown monitoring"),
-            ("GitHub", "face-verification projects, C2PA tooling"),
-            ("AIs", "Local avatar builds — ownable, not rented"),
-            ("Hardware", "A phone scan is enough to start"),
-            ("Databases", "Our Likeness Tools DB"),
+            ("Apps", "Face-verification tooling, takedown monitoring, Demucs / Spleeter for local stem separation"),
+            ("GitHub", "face-verification projects, C2PA tooling, audiocraft, local RVC voice tooling"),
+            ("AIs", "Local avatar builds and local voice models — ownable, not rented"),
+            ("Hardware", "A phone scan is enough to start; your studio machine for music — nothing needs to leave it"),
+            ("Databases", "Our Likeness Tools DB + Music AI Tools DB"),
         ],
-        cta: "Join the LMA beta.",
+        links: &[],
+        cta: "Join the LMA beta — creators and musicians alike.",
     },
     Blog {
         slug: "universities-labs",
@@ -568,9 +558,46 @@ const BLOGS: &[Blog] = &[
             ("Hardware", "Campus GPU node or a watched local node"),
             ("Databases", "Our Ethical AI Framework DB"),
         ],
+        links: &[],
         cta: "Download the free framework template — see the Ethical AI Framework service.",
     },
 ];
+
+// ---------------------------------------------------------------------------
+// Contact CTAs — WhatsApp + templated email (owner instruction 2026-10-27:
+// every blog and service page; the message pre-fills what they clicked on)
+// ---------------------------------------------------------------------------
+
+fn url_encode(s: &str) -> String {
+    let mut out = String::new();
+    for b in s.bytes() {
+        match b {
+            b'A'..=b'Z' | b'a'..=b'z' | b'0'..=b'9' | b'-' | b'_' | b'.' | b'~' => out.push(b as char),
+            _ => out.push_str(&format!("%{:02X}", b)),
+        }
+    }
+    out
+}
+
+fn contact_cta(interest: &str, tag: &str) -> String {
+    let wa = url_encode(&format!("Hi Authentic Human — I'm interested in: {}. ", interest));
+    let subject = url_encode(&format!("Interested in: {}", interest));
+    let body = url_encode(&format!("Hi Authentic Human,\n\nI'm interested in: {}\n\nWhat I want: \n\nMy budget: \n", interest));
+    format!(
+        r##"<div class="cta-row"><a class="btn primary" href="https://wa.me/17134109994?text={wa}" target="_blank" rel="noopener">Text me on WhatsApp &rarr;</a><a class="btn" href="mailto:message+{tag}@pjrny.com?subject={subject}&amp;body={body}">Email me &rarr;</a></div><p class="texture">Both go straight to the founder. WhatsApp opens with what you clicked on pre-filled. The email opens addressed to message+{tag}@pjrny.com with a template — just add what you want and your budget.</p>"##,
+        wa = wa, tag = tag, subject = subject, body = body
+    )
+}
+
+fn links_row(links: &[(&str, &str)]) -> String {
+    if links.is_empty() { return String::new(); }
+    let mut s = String::from(r##"<h3>Live / free — go there</h3><div class="cta-row">"##);
+    for (label, url) in links {
+        s.push_str(&format!(r##"<a class="btn" href="{}" target="_blank" rel="noopener">{} &rarr;</a>"##, url, label));
+    }
+    s.push_str("</div>");
+    s
+}
 
 // ---------------------------------------------------------------------------
 // Page scaffolding
@@ -718,9 +745,9 @@ fn home_body() -> String {
 <p class="lede">Authentic Human is a creative AI agency in Houston, TX. Purpose: build tools that make authentic humans impossible to replace. Mission: verify, protect and monetize authentic human identity, while forecasting instability through storytelling and simulation.</p>
 <p>It started in 2018 with music generation in the Jukebox era (1M+ views, 2018–2020) — and with the realization that the tools creating human culture would next come for human identity itself. From Jukebox to Music AI: since 2018.</p>
 <div class="grid c3">
-<div class="tile"><div class="tag">Pillar 01</div><h3>Forecasting Instability</h3><p>Simulation and research on what AI does to jobs, markets and politics — before it does it.</p></div>
+<div class="tile"><div class="tag">Pillar 01</div><h3>Authenticity</h3><p>To make human authenticity — physically and creatively — the most valuable currency there is. Verified, protected, and owned by the human it belongs to.</p></div>
 <div class="tile"><div class="tag">Pillar 02</div><h3>Storytelling</h3><p>One idea becomes social, PR, ebook, audio, music and poster. Stories are how humans learn what the data means.</p></div>
-<div class="tile"><div class="tag">Pillar 03</div><h3>Simulation Gameplay</h3><p>Fusion, policy and political-economic simulators — real forecasting you can play with, not entertainment.</p></div>
+<div class="tile"><div class="tag">Pillar 03</div><h3>Forecasting Instability &amp; Simulation Gameplay</h3><p>Simulation and research on what AI does to jobs, markets and politics — before it does it. Fusion, policy and political-economic simulators: real forecasting you can play with, not entertainment.</p></div>
 </div>
 </div></section>
 "##);
@@ -797,7 +824,7 @@ fn home_body() -> String {
     s.push_str(&format!(r##"<section id="blogs"><div class="wrap">
 <div class="eyebrow">Blogs by niche — free DIY tools, insights, case studies</div>
 <h2>Learn it here. Free.</h2>
-<p>Every niche gets the full playbook: the shift, the losers' mistakes, the approach, a real example, and the free tools list. <a href="blog/">All 7 playbooks &rarr;</a></p>
+<p>Every niche gets the full playbook: the shift, the losers' mistakes, the approach, a real example, and the free tools list. <a href="blog/">All 6 playbooks &rarr;</a></p>
 <div class="grid c3">{cards}</div>
 </div></section>
 "##, cards = blog_cards));
@@ -808,17 +835,15 @@ fn home_body() -> String {
 <p>Case studies are work the founder was hired to build. Owned projects are our internal R&amp;D — labeled as such, never dressed up as client work.</p>
 <h3>HIRED &bull; Case studies &amp; partners</h3>
 <div class="grid c3">
-<article class="card"><div class="tag">Hired &bull; Festival</div><h3>flix.worldfest.org</h3><p>WorldFest film database + streaming: independent films, AI subtitles and dubbing, provenance on deliverables.</p><a class="more" href="https://flix.worldfest.org">flix.worldfest.org &rarr;</a></article>
-<article class="card"><div class="tag">Hired &bull; Archive</div><h3>database.worldfest.org</h3><p>The WorldFest taxonomy archive / scientific database behind the festival's decades of films.</p><a class="more" href="https://database.worldfest.org">database.worldfest.org &rarr;</a></article>
-<article class="card"><div class="tag">Hired &bull; Event OS</div><h3>pjrny.com/organizers</h3><p>Free ticketing and event OS for organizers — QR check-in, organizer dashboard, zero ticket fees, organizers own their data. A Patron Journey project.</p><a class="more" href="https://pjrny.com/organizers">pjrny.com/organizers &rarr;</a></article>
-<article class="card"><div class="tag">Hired &bull; Project</div><h3>patronjourney.com</h3><p>Patron Journey: free ticketing, free websites and free tools like the event simulator, built for organizers and venues.</p><a class="more" href="https://patronjourney.com">patronjourney.com &rarr;</a></article>
+<article class="card"><div class="tag">Hired &bull; Festival + Archive</div><h3>WorldFest-Houston</h3><p>One festival, two systems: <strong>flix.worldfest.org</strong> — film database + streaming, independent films, AI subtitles and dubbing, provenance on deliverables; and <strong>database.worldfest.org</strong> — the taxonomy archive / scientific database behind the festival's decades of films.</p><a class="more" href="https://flix.worldfest.org">flix.worldfest.org &rarr;</a><br><a class="more" href="https://database.worldfest.org">database.worldfest.org &rarr;</a></article>
+<article class="card"><div class="tag">Hired &bull; Event OS</div><h3>Patron Journey</h3><p>Free ticketing and event OS for organizers at <strong>pjrny.com/organizers</strong> — QR check-in, organizer dashboard, zero ticket fees, organizers own their data — plus free websites and free tools like the event simulator at <strong>patronjourney.com</strong>, built for organizers and venues.</p><a class="more" href="https://pjrny.com/organizers">Free ticketing — pjrny.com/organizers &rarr;</a><br><a class="more" href="https://patronjourney.com">patronjourney.com &rarr;</a></article>
 <article class="card"><div class="tag">Hired &bull; Festival OS</div><h3>festival.marketing</h3><p>Festival OS work with the Houston WorldFest partnership — the operating layer under festival marketing.</p><a class="more" href="https://festival.marketing">festival.marketing &rarr;</a></article>
 </div>
 <h3 style="margin-top:30px">OWNED &bull; Internal R&amp;D</h3>
 <div class="grid c3">
 <article class="card"><div class="tag">Owned &bull; R&amp;D</div><h3>LMA — OIMO</h3><p>The likeness monetization agent: Identify, Protect, Monetize authentic human likeness. Our long-term product, sold as the Likeness Agent service.</p><a class="more" href="services/likeness-agent/">Likeness Agent &rarr;</a></article>
-<article class="card"><div class="tag">Owned &bull; R&amp;D</div><h3>DBE</h3><p>The scientific simulator and taxonomy observatory (DBE_V0): complex-systems modeling that runs on local AI agents.</p><a class="more" href="services/scientific-simulator/">Scientific Simulator &rarr;</a></article>
-<article class="card"><div class="tag">Owned &bull; R&amp;D</div><h3>PoliSim</h3><p>A political / business / economic simulator: test policy and strategy against Monte Carlo forecasts of instability before you commit.</p><a class="more" href="blog/political-campaigns/">PoliSim playbook &rarr;</a></article>
+<article class="card"><div class="tag">Owned &bull; R&amp;D</div><h3>DBE</h3><p>The scientific simulator and taxonomy observatory (DBE_V0): complex-systems modeling that runs on local AI agents.</p><a class="more" href="https://pjrny.github.io/DBE_V0/">Open DBE_V0 &rarr;</a><br><a class="more" href="services/scientific-simulator/">Scientific Simulator &rarr;</a></article>
+<article class="card"><div class="tag">Owned &bull; R&amp;D</div><h3>PoliSim</h3><p>A political / business / economic simulator: test policy and strategy against Monte Carlo forecasts of instability before you commit.</p><a class="more" href="https://poli-eco-sim.kimi.page/">Try the Political Economic Simulator &rarr;</a><br><a class="more" href="blog/political-campaigns/">PoliSim playbook &rarr;</a></article>
 </div>
 </div></section>
 "##);
@@ -939,12 +964,15 @@ fn service_body(s: &Service) -> String {
 <h3>How it works</h3><ol>{proc}</ol>
 <h3>Pricing — the model</h3><ul class="tight">{price}</ul>
 <h3>Proof</h3><p>{case}</p>
-<div class="cta-row"><a class="btn primary" href="https://github.com/pjrny">{cta} &rarr;</a><a class="btn" href="../../#services">All services</a></div>
-<p class="texture">Start the conversation on GitHub — the founder reads everything. Houston, TX.</p>
+{links}
+<h3>Next step</h3><p>{cta} — or just reach out, it goes straight to the founder (Houston, TX):</p>
+{contact}
+<p><a href="../../#services">&larr; All services</a></p>
 </div></section></main>
 "##,
         tag = s.tag, title = s.title, hook = s.hook, icp = s.icp, pain = s.pain,
-        proc = proc, price = price, case = s.case, cta = s.cta
+        proc = proc, price = price, case = s.case, cta = s.cta,
+        links = links_row(s.links), contact = contact_cta(s.name, s.slug)
     )
 }
 
@@ -966,13 +994,16 @@ fn blog_body(b: &Blog) -> String {
 <h3>Winners + benefits</h3><p>{winners}</p>
 <h3>Actionable tip — free tools list</h3>
 <table>{rows}</table>
+{links}
 <h3 style="margin-top:24px">Next step</h3><p>{cta}</p>
-<p><a href="../">All 7 niche playbooks &rarr;</a></p>
+{contact}
+<p><a href="../">All 6 niche playbooks &rarr;</a></p>
 </div></section></main>
 "##,
         niche = b.niche, maker = b.maker, texture = b.texture, hook = b.hook, who = b.who,
         problem = b.problem, losers = b.losers, approach = b.approach, example = b.example,
-        winners = b.winners, rows = rows, cta = b.cta
+        winners = b.winners, rows = rows, cta = b.cta,
+        links = links_row(b.links), contact = contact_cta(&format!("{} playbook", b.niche), b.slug)
     )
 }
 
@@ -1066,7 +1097,7 @@ fn main() {
 
     add(&mut urls, "blog/index.html", page(
         "Blogs by Niche — Authentic Human",
-        "Free DIY tools, insights and case studies per niche: film festivals, event organizers, fusion researchers, campaigns, musicians, creators, universities.",
+        "Free DIY tools, insights and case studies per niche: film festivals, event organizers, fusion researchers, campaigns, creators and musicians, universities.",
         "https://authentichuman.co/blog/", "../", false, &blog_index_body()));
 
     for b in BLOGS {
@@ -1076,6 +1107,11 @@ fn main() {
             &format!("https://authentichuman.co/blog/{}/", b.slug),
             "../../", false, &blog_body(b)));
     }
+
+    // Musicians blog merged into Influencers/Creators 2026-10-27 — keep the
+    // old URL working with a redirect (not in the sitemap).
+    write(&dist.join("blog/musicians/index.html"),
+        "<!DOCTYPE html>\n<html lang=\"en\"><head><meta charset=\"utf-8\"><title>Moved — Authentic Human</title><meta http-equiv=\"refresh\" content=\"0; url=../influencers-creators/\"><link rel=\"canonical\" href=\"https://authentichuman.co/blog/influencers-creators/\"></head><body><p>The Musicians playbook now lives inside <a href=\"../influencers-creators/\">Influencers, Creators &amp; Musicians</a>.</p></body></html>\n");
 
     // 404 (absolute asset paths: Pages serves it at any depth)
     let mut nf = head("Page not found — Authentic Human",
