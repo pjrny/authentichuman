@@ -37,7 +37,7 @@ Everything lives in `src/main.rs`:
 
 - **Services** — the `SERVICES` table (5 services: likeness-agent,
   local-llm, ethical-framework, scientific-simulator, story-factory).
-- **Blogs** — the `BLOGS` table (7 niches, hero format: who / hook /
+- **Blogs** — the `BLOGS` table (6 niches, hero format: who / hook /
   problem / losers / approach / example / winners / free tools / CTA).
 - **Home page** — `home_body()` (hero, value prop, about, winners/losers,
   the master system diagram, blogs, projects, services, governance teaser).
@@ -66,7 +66,9 @@ the Minimalist mark.
   appears only as a project/partner/case study and in the footer credit.
 - No old brand name anywhere in the output.
 - No street address (city only: Houston, TX), no named advisors/employees,
-  no placeholder verification signatures, no phone numbers.
+  no placeholder verification signatures. Contact on blog/service pages is
+  the owner's WhatsApp (wa.me link, interest pre-filled) and templated
+  email to message+<interest>@pjrny.com — owner's instruction, 2026-10-27.
 - Winners/Losers stats on the home page are sourced (Upwork / LinkedIn /
   WEF) — do not swap in unsourced numbers.
 
