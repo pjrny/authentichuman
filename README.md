@@ -49,14 +49,16 @@ Everything lives in `src/main.rs`:
   switcher swaps the stylesheet and persists the choice in `localStorage`
   only; pressing **S** cycles realities.
 
-## Logos — TODO: drop in the originals
+## Logos
 
-`assets/logo/` currently holds **placeholder** logos extracted from the
-rebrand deck artifacts (see `assets/logo/README.md`). The original logo
-files replace them by **filename swap only** — no code changes:
-
-`logo-minimalist.png` (used in the header/hero), `logo-maximalist.png`,
-`logo-brutalist.png`, `logo-glass.png`, `favicon.svg`.
+`assets/logo/` holds the owner's original logos, chroma-keyed to
+transparency and shipped as WebP (`logo-<reality>-<variant>.webp`); the
+theme switcher swaps the header/hero logo together with the theme.
+Untouched originals are archived in `assets/logo/originals/` — see
+`assets/logo/README.md` for the full mapping table. 15 of 17 realities
+have a real logo; Retro's two badges are archive-only (their artwork
+carries pre-2018 dates) and Eurotrash has none yet — both fall back to
+the Minimalist mark.
 
 ## Brand rules (do not break)
 
