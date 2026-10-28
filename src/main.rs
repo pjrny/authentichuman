@@ -302,7 +302,7 @@ const SERVICES: &[Service] = &[
             "Compare: HeyGen at $29/mo and Synthesia at $19/mo are rentals — the platform owns the avatar. Here, you own it outright.",
         ],
         case: "WorldFest filmmakers: likeness protected and monetized through flix.worldfest.org, with provenance on every deliverable.",
-        links: &[],
+        links: &[("Make a Scene — free SFW preview", "https://opal-flora-opal-forest.grok.me/")],
         cta: "Join the LMA beta",
     },
     Service {
@@ -372,7 +372,7 @@ const SERVICES: &[Service] = &[
             "Grant co-write included in the engagement",
         ],
         case: "PoliSim-DBE-Game: a political and economic simulator running Monte Carlo policy tests. DBE_V0: the scientific taxonomy observatory behind it.",
-        links: &[("DBE_V0 — live", "https://pjrny.github.io/DBE_V0/"), ("Political Economic Simulator — live", "https://poli-eco-sim.kimi.page/")],
+        links: &[("DBE_V0 — live", "https://pjrny.github.io/DBE_V0/"), ("Political Economic Simulator — live", "https://poli-eco-sim.kimi.page/"), ("Marketing ROI Simulator — live", "https://www.pjrny.com/marketing-sim-forecast")],
         cta: "Co-write an ECRP grant with us",
     },
     Service {
@@ -395,7 +395,7 @@ const SERVICES: &[Service] = &[
             "Includes press-release template and a 60-second explainer script",
         ],
         case: "WorldFest on flix.worldfest.org: independent human stories, streamed free, each one a package instead of a single post.",
-        links: &[("Make a Scene — free", "https://opal-flora-opal-forest.grok.me/")],
+        links: &[],
         cta: "Order a story",
     },
 ];
@@ -443,7 +443,7 @@ const BLOGS: &[Blog] = &[
             ("Hardware", "Any modern Mac or a home GPU box — $0 extra to start"),
             ("Databases", "Our Indie Film Tools DB (updated weekly)"),
         ],
-        links: &[("Make a Scene — free scene builder", "https://opal-flora-opal-forest.grok.me/")],
+        links: &[],
         cta: "Want free hosting for your festival? Apply via flix.worldfest.org — or join the LMA beta to monetize filmmaker likeness.",
     },
     Blog {
@@ -466,7 +466,7 @@ const BLOGS: &[Blog] = &[
             ("Hardware", "Repurposed phones as door scanners — offline check-in that syncs later"),
             ("Databases", "Our Event Tools DB"),
         ],
-        links: &[("Free ticketing — pjrny.com/organizers", "https://pjrny.com/organizers")],
+        links: &[("Free ticketing — pjrny.com/organizers", "https://pjrny.com/organizers"), ("Event Simulator — free forecaster", "https://events-patronjourney.message-0ad.workers.dev/forecaster/")],
         cta: "Create a free event on pjrny.com/organizers, or apply as a partner.",
     },
     Blog {
@@ -836,12 +836,12 @@ fn home_body() -> String {
 <h3>HIRED &bull; Case studies &amp; partners</h3>
 <div class="grid c3">
 <article class="card"><div class="tag">Hired &bull; Festival + Archive</div><h3>WorldFest-Houston</h3><p>One festival, two systems: <strong>flix.worldfest.org</strong> — film database + streaming, independent films, AI subtitles and dubbing, provenance on deliverables; and <strong>database.worldfest.org</strong> — the taxonomy archive / scientific database behind the festival's decades of films.</p><a class="more" href="https://flix.worldfest.org">flix.worldfest.org &rarr;</a><br><a class="more" href="https://database.worldfest.org">database.worldfest.org &rarr;</a></article>
-<article class="card"><div class="tag">Hired &bull; Event OS</div><h3>Patron Journey</h3><p>Free ticketing and event OS for organizers at <strong>pjrny.com/organizers</strong> — QR check-in, organizer dashboard, zero ticket fees, organizers own their data — plus free websites and free tools like the event simulator at <strong>patronjourney.com</strong>, built for organizers and venues.</p><a class="more" href="https://pjrny.com/organizers">Free ticketing — pjrny.com/organizers &rarr;</a><br><a class="more" href="https://patronjourney.com">patronjourney.com &rarr;</a></article>
+<article class="card"><div class="tag">Hired &bull; Event OS</div><h3>Patron Journey</h3><p>Free ticketing and event OS for organizers at <strong>pjrny.com/organizers</strong> — QR check-in, organizer dashboard, zero ticket fees, organizers own their data — plus free websites and free tools like the event simulator at <strong>patronjourney.com</strong>, built for organizers and venues.</p><a class="more" href="https://pjrny.com/organizers">Free ticketing — pjrny.com/organizers &rarr;</a><br><a class="more" href="https://events-patronjourney.message-0ad.workers.dev/forecaster/">Event Simulator &rarr;</a><br><a class="more" href="https://patronjourney.com">patronjourney.com &rarr;</a></article>
 <article class="card"><div class="tag">Hired &bull; Festival OS</div><h3>festival.marketing</h3><p>Festival OS work with the Houston WorldFest partnership — the operating layer under festival marketing.</p><a class="more" href="https://festival.marketing">festival.marketing &rarr;</a></article>
 </div>
 <h3 style="margin-top:30px">OWNED &bull; Internal R&amp;D</h3>
 <div class="grid c3">
-<article class="card"><div class="tag">Owned &bull; R&amp;D</div><h3>LMA — OIMO</h3><p>The likeness monetization agent: Identify, Protect, Monetize authentic human likeness. Our long-term product, sold as the Likeness Agent service.</p><a class="more" href="services/likeness-agent/">Likeness Agent &rarr;</a></article>
+<article class="card"><div class="tag">Owned &bull; R&amp;D</div><h3>LMA — OIMO</h3><p>The likeness monetization agent: Identify, Protect, Monetize authentic human likeness. Our long-term product, sold as the Likeness Agent service.</p><a class="more" href="services/likeness-agent/">Likeness Agent &rarr;</a><br><a class="more" href="https://opal-flora-opal-forest.grok.me/">Make a Scene — free SFW preview &rarr;</a></article>
 <article class="card"><div class="tag">Owned &bull; R&amp;D</div><h3>DBE</h3><p>The scientific simulator and taxonomy observatory (DBE_V0): complex-systems modeling that runs on local AI agents.</p><a class="more" href="https://pjrny.github.io/DBE_V0/">Open DBE_V0 &rarr;</a><br><a class="more" href="services/scientific-simulator/">Scientific Simulator &rarr;</a></article>
 <article class="card"><div class="tag">Owned &bull; R&amp;D</div><h3>PoliSim</h3><p>A political / business / economic simulator: test policy and strategy against Monte Carlo forecasts of instability before you commit.</p><a class="more" href="https://poli-eco-sim.kimi.page/">Try the Political Economic Simulator &rarr;</a><br><a class="more" href="blog/political-campaigns/">PoliSim playbook &rarr;</a></article>
 </div>
